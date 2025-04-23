@@ -2,26 +2,26 @@
     "name": "mempool dot guide",
     "short_name": "mempooldotguide",
     "author": {
-        "name": "mempooldotguide author",
-        "link": ""
+        "name": "Léo Haf",
+        "link": "https://github.com/Retropex/mempool"
     },
     "website": {
-        "name": "GitHub",
-        "link": "https://github.com/FILL_IN_GITHUB_USER/FILL_IN_GITHUB_PROJECT"
+        "name": "Mempool",
+        "link": "https://mempool.guide"
     },
     "category": "bitcoin_app",
-    "short_description": "Fill in short description",
+    "short_description": "Explore Bitcoin",
     "description": [
-        "Fill in longer description"
+        "Run your own mempool dot guide instance."
     ],
-    "latest_version": "v0.0.1",
-    "supported_archs": null,
-    "download_skip": false,
+    "latest_version": "v3.2.0",
+    "supported_archs": ["aarch64","x86_64"],
+    "download_skip": true,
     "download_type": "source",
-    "download_source_url": "https://github.com/FILL_IN_GITHUB_USER/FILL_IN_GITHUB_PROJECT/archive/refs/tags/{VERSION}.tar.gz",
+    "download_source_url": "",
     "download_binary_url": {
-        "aarch64": "download_url",
-        "x86_64": "download_url"
+        "aarch64": "",
+        "x86_64": ""
     },
     "install_env_vars": {},
     "supports_app_page": true,
@@ -38,18 +38,14 @@
     "hide_status_icon": false,
     "app_tile_name": "mempool dot guide",
     "app_tile_running_status_text": "Running",
-    "app_tile_button_text": "Info",
+    "app_tile_button_text": "Open",
     "app_tile_button_href": "/app/mempooldotguide/info",
     "app_page_show_open_button": true,
     "app_page_content": [
         {
-            "heading": "Instructions",
+            "heading": "Enjoy mempool",
             "content": [
-                "Add general usage instructions here. You can open the app with the Open button on the left (if web based).",
-                "For more custom content, update the template and python files under the 'www' folder.",
-                "Paragraph 3",
-                "Paragraph 4",
-                "Enjoy!"
+                ""
             ]
         }
     ],
