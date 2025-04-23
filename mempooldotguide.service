@@ -9,11 +9,12 @@ After=www.service docker_images.service
 [Service]
 WorkingDirectory=/opt/mynode/mempooldotguide
 
+EnvironmentFile=/mnt/hdd/mynode/settings/.btcrpc_environment
 ExecStartPre=/usr/bin/is_not_shutting_down.sh
 ExecStartPre=/bin/bash -c 'if [ -f /usr/bin/service_scripts/pre_mempooldotguide.sh ]; then /bin/bash /usr/bin/service_scripts/pre_mempooldotguide.sh; fi'
-ExecStart=FILL_IN_EXECSTART
+ExecStart=/usr/local/bin/docker-compose up
 ExecStartPost=/bin/bash -c 'if [ -f /usr/bin/service_scripts/post_mempooldotguide.sh ]; then /bin/bash /usr/bin/service_scripts/post_mempooldotguide.sh; fi'
-#ExecStop=FILL_IN_EXECSTOP_AND_UNCOMMENT_IF_NEEDED
+ExecStop=/usr/local/bin/docker-compose down
 
 User=mempooldotguide
 Group=mempooldotguide
@@ -27,16 +28,3 @@ SyslogIdentifier=mempooldotguide
 
 [Install]
 WantedBy=multi-user.target
-
-```` # to remove
-[Service]
-WorkingDirectory=/mnt/hdd/mynode/mempool
-EnvironmentFile=/mnt/hdd/mynode/settings/.btcrpc_environment
-ExecStartPre=/usr/bin/is_not_shutting_down.sh
-ExecStartPre=/usr/bin/wait_on_bitcoin.sh
-ExecStartPre=/usr/bin/wait_on_docker_image_install.sh
-ExecStartPre=+/usr/bin/service_scripts/pre_mempool.sh
-ExecStart=/usr/local/bin/docker-compose up
-ExecStartPost=/usr/bin/service_scripts/post_mempool.sh
-
-ExecStop=/usr/local/bin/docker-compose down
